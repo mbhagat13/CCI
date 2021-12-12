@@ -56,6 +56,15 @@ public class test {
 
             System.out.println(map.get(1));
 
+            System.out.println(1%2);
+
+
+            int random = 56;
+            TripleStep test2 = new TripleStep();
+;
+
+
+            System.out.println(test2.hashCode());
         }
     }
 

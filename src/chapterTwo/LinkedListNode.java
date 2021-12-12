@@ -1,7 +1,7 @@
 package chapterTwo;
 
 
-public class LinkedListNode {
+public class  LinkedListNode {
     public LinkedListNode next, prev, last;
     public int data;
     public LinkedListNode (int d, LinkedListNode n, LinkedListNode p){

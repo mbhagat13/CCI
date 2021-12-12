@@ -9,7 +9,7 @@ public class TestTeacher {
         // Here you can see Teacher object's method is executed even-
         // -though the Person reference was used
         another_person.teach();//output: Teacher can teach in a school
-        teacher.teach();//output: Teacher can teach in a school
+        another_person.teach();//output: Teacher can teach in a school
 
         teacher.methodTeach();
     }

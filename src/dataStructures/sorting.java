@@ -70,17 +70,51 @@ public class sorting {
         for(int i = 0; i <= remaining; i++){
             nums[i + current] = helper[i + helperLeft];
         }
+    }
 
+    public static void quickSort (int [] arr, int left, int right){
+        int index = partition(arr,left,right);
 
+        if(left<index-1){
+            quickSort(arr,left,index-1);
+        }
+        if(index<right){
+            quickSort(arr,index,right);
+        }
 
     }
+
+    public static int partition (int [] arr, int left, int right){
+        int pivot = arr[(left+right)/2],temp = 0;
+        System.out.println(left + " " + right + " " + pivot);
+        while(left<=right){
+            while(arr[left]<pivot)
+                left++;
+            while(arr[right]>pivot)
+                right--;
+
+            if(left<=right){
+                temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+        return left;
+    }
+
 
     public static void main (String [] args){
         int [] numbersSorted = {1,5,8,9,34,897,6473,5463354};
         int [] numbersUnsorted = {5, 1, 8,9,34,9000,897,6473,323,5463354};
 
         //System.out.println(binarySearch(numbersSorted, 897));
-        mergeSort(numbersUnsorted);
+        //mergeSort(numbersUnsorted);
+
+        quickSort(numbersUnsorted,0,numbersUnsorted.length-1);
+
+
         for(int i = 0; i< numbersUnsorted.length; i++) {
             System.out.println(numbersUnsorted[i]);
         }
